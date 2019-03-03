@@ -1,0 +1,26 @@
+{
+    "version": 2,
+    "name": "express-now",
+    "builds": [{
+        "src": "./bin/www",
+        "use": "@now/node-server"
+    }],
+    "routes": [{
+        "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+            "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+        },
+        "src": "/.*",
+        "dest": "/index.js"
+    }],
+    "build": {
+        "env": {
+            "NODE_ENV": "production",
+            "AUTH_KEY": "SIH",
+            "SMTP_EMAIL": "dsosc.sih@gmail.com",
+            "SMTP_PASSWORD": "dsosc1234",
+            "LOG_MAIL": "musthu.gm@gmail.com"
+        }
+    }
+}
